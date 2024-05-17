@@ -52,7 +52,7 @@ body {
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 
-#back-side {
+#back-face {
     transform: rotateY(180deg);
 }
 
@@ -62,26 +62,31 @@ body {
     padding: 25px;
 }
 
-.header {
+.front-header,
+.back-header {
     height: 25%;
     display: flex;
     align-items: center;
 }
 
-.header-left,
-.header-right {
+.front-header-left,
+.back-header-left,
+.front-header-right,
+.back-header-right {
     display: flex;
 }
 
-.header-right {
+.front-header-right,
+.back-header-right {
     flex-direction: column;
     justify-content: center;
     display: flex;
     align-items: center;
-    width: 200%;
+    width: 100%;
 }
 
-.header-left {
+.front-header-left,
+.back-header-left {
     justify-content: center;
     position: relative;
 }
@@ -112,13 +117,15 @@ p {
     font-size: 12px;
 }
 
-.profile-pic {
+.front-profile-pic,
+.back-profile-pic {
     height: 90px;
     border: 4px solid white;
     border-radius: 50%;
 }
 
-.logo {
+.front-logo,
+.back-logo {
     height: 35px;
     position: absolute;
     bottom: 0;
@@ -139,10 +146,20 @@ p {
     background-color: transparent;
 }
 
+.social-icons:hover {
+    transform: scale(1.1);
+    opacity: .8;
+}
+
+.social-icons-large:hover {
+    transform: rotate(20deg);
+}
+
 .social-icons-large {
     height: 30px;
     width: 30px;
     margin-right: 15px;
+    transition: all 1s ease;
 }
 
 .social-links {
@@ -150,6 +167,7 @@ p {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    transition: all 1s ease;
 }
 
 .social-link-containers {
@@ -175,7 +193,8 @@ p {
     width: 25px;
 }
 
-.content-box {
+.front-content-box,
+.back-content-box {
     background-color: #FFFFFF;
     border-radius: 5px;
     height: 75%;
@@ -225,7 +244,8 @@ p {
     margin-bottom: 10px;
 }
 
-.flip-btn {
+.front-flip-btn,
+.back-flip-btn {
     border-radius: 10px;
     background-color: #CA6D81;
     border: none;
@@ -238,9 +258,95 @@ p {
     cursor: pointer;
 }
 
-.flip-icon {
+.front-flip-icon,
+.back-flip-icon {
     z-index: 2;
     position: absolute;
     bottom: 12px;
     right: 12px;
+    height: 25px;
+    width: 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        height: 320px;
+        width: 620px;
+    }
+
+    .front-header,
+    .back-header {
+        height: 40%;
+    }
+
+    .front-header-right {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    
+    .front-header-left {
+        width: 30%;
+        justify-content: flex-end;
+    }
+
+    .front-content-box,
+    .back-content-box {
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social-icons-wrapper {
+        margin-top: 0;
+        width: 40%;
+    }
+
+    .design-container {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+        height: 100%;
+    }
+
+    .front-flip-btn {
+        bottom: 12px;
+        right: 10px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .front-flip-icon {
+        bottom: 8px;
+        right: 7px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .floral-designs {
+        height: 80px;
+    }
+
+    #qr-container {
+        height: 100%;
+    }
+    
+    .back-header-left {
+        width: 36%;
+        justify-content: flex-end;
+    }
+
+    .back-header-right {
+        width: 40%;
+    }
+
+    .social-link-containers {
+        padding: 0 30px 0 10px;
+        height: 30px;
+    }
+
+    .social-icons-large {
+        height: 25px;
+        width: 25px;
+    }
 }
